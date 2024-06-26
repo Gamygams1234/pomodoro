@@ -1,0 +1,25 @@
+$coral: #f87070;
+$skybue: #70f3f8;
+$periwinkle: #d881f8;
+$grey: #d7e0ff;
+$navy: #1e213f;
+$white: #ffffff;
+$light-grey: #eff1fa;
+$dark-navy: #161932;
+
+.modal {
+  position: absolute;
+  width: calc(100% - 3rem);
+  padding: 1.5rem;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: calc(100% - 3rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content {
+    width: 100%;
+    max-width: 540px;
+  }
+}

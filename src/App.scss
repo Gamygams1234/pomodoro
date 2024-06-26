@@ -1,0 +1,121 @@
+$coral: #f87070;
+$skybue: #70f3f8;
+$periwinkle: #d881f8;
+$grey: #d7e0ff;
+$navy: #1e213f;
+$white: #ffffff;
+$light-grey: #eff1fa;
+$dark-navy: #161932;
+
+.App {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  background-color: $navy;
+  color: white;
+  background: linear-gradient(to bottom right, #2e325a, #0e112a);
+}
+
+.fw-100 {
+  font-weight: 100;
+}
+.fw-200 {
+  font-weight: 200;
+}
+.fw-300 {
+  font-weight: 300;
+}
+.fw-400 {
+  font-weight: 400;
+}
+.fw-500 {
+  font-weight: 500;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.fw-700 {
+  font-weight: 700;
+}
+.fw-800 {
+  font-weight: 800;
+}
+.fw-900 {
+  font-weight: 900;
+}
+
+.kumbh-sans {
+  font-family: "Kumbh Sans", sans-serif;
+}
+.roboto-slab {
+  font-family: "Roboto Slab", serif;
+}
+
+.space-mono {
+  font-family: "Space Mono", monospace;
+}
+.gear-icon {
+  font-size: 2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.options {
+  background-color: $dark-navy;
+  display: flex;
+  border: $dark-navy 5px solid;
+  border-radius: 2rem;
+  font-weight: 700;
+
+  .option {
+    width: 7.5rem;
+    color: $grey;
+    cursor: pointer;
+    border-radius: 2rem;
+    font-size: 1rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // transition: background-color .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    text-transform: lowercase;
+  }
+  .option.active {
+    background-color: #f87070;
+    color: $dark-navy;
+  }
+}
+
+.coral {
+  .options {
+    .option.active {
+      background-color: $coral;
+      color: $dark-navy;
+    }
+  }
+}
+.periwinkle {
+  .options {
+    .option.active {
+      background-color: $periwinkle;
+      color: $dark-navy;
+    }
+  }
+}
+
+.sky-blue {
+  .options {
+    .option.active {
+      background-color: $skybue;
+      color: $dark-navy;
+    }
+  }
+}
+
+.timer-outer {
+}

@@ -1,0 +1,123 @@
+$coral: #f87070;
+$skybue: #70f3f8;
+$periwinkle: #d881f8;
+$grey: #d7e0ff;
+$navy: #1e213f;
+$white: #ffffff;
+$light-grey: #eff1fa;
+$dark-navy: #161932;
+
+
+.timer-border {
+  display: inline-block;
+  padding: 1rem;
+  background: linear-gradient(to bottom right, #0E112A, #2E325A);
+  border-radius: 50%; // Adjust if you need different shape
+}
+
+.timer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 11rem;
+  background-color: $dark-navy;
+  border: solid 5px transparent;
+  box-sizing: border-box;
+  margin: auto;
+  background-clip: padding-box; /* !importanté */
+
+
+  
+}
+
+
+.progress-circle {
+  position: absolute;
+
+ 
+}
+
+.progress-circle-bg,
+.progress-circle-fg {
+  cx: 50%;
+  cy: 50%;
+  r: 45%; // Adjust radius to ensure it fits within the container
+}
+
+.progress-circle {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+// .progress-circle-bg,
+// .progress-circle-fg {
+//   cx: 50;
+//   cy: 50;
+//   r: 45;
+//   stroke-linecap: round; // Smooth the stroke edges
+// }
+
+.time {
+  font-size: 6.25rem;
+  z-index: 1;
+  color: $grey;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.indicator {
+  z-index: 2;
+  color: $white;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  font-weight: 700;
+  color: $grey;
+  text-align: center;
+  cursor: pointer;
+}
+
+// .timer {
+//   position: relative;
+//   width: 22rem; // Adjust as needed
+//   height: 22rem; // Adjust as needed
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: $dark-navy;
+//   border-radius: 11rem;
+
+//   .progress-circle {
+//     width: 100%;
+//     height: 100%;
+//   }
+
+//   .progress-circle-bg,
+//   .progress-circle-fg {
+//     cx: 50;
+//     cy: 50;
+//     r: 45;
+//     stroke-linecap: round; // Smooth the stroke edges
+//   }
+
+//   .time {
+//     position: absolute;
+//     z-index: 1;
+//     font-size: 2rem; // Adjust font size as needed
+//     text-align: center;
+//   }
+
+//   .indicator {
+//     position: absolute;
+//     bottom: 1rem; // Adjust position as needed
+//     z-index: 1;
+//     cursor: pointer;
+//   }
+// }
