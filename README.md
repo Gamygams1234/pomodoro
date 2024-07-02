@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+Pomodoro App README
+Overview
+The Pomodoro App is a time management tool built using React that helps users break their work into intervals, traditionally 25 minutes in length, separated by short breaks. This method improves focus and productivity by encouraging periods of sustained concentration followed by rest.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Customizable Timers: Set your preferred lengths for work sessions and breaks.
+Task List: Manage your tasks directly within the app.
+Progress Tracking: Visual representation of your completed pomodoros.
+Notifications: Get notified when it's time to take a break or get back to work.
+Responsive Design: Works seamlessly on both desktop and mobile devices.
+Getting Started
+Prerequisites
+Ensure you have the following installed on your machine:
 
-## Available Scripts
+Node.js
+npm
+Installation
+Clone the repository:
 
-In the project directory, you can run:
+bash
+Copy code
+git clone https://github.com/yourusername/pomodoro-app.git
+Navigate to the project directory:
 
-### `npm start`
+bash
+Copy code
+cd pomodoro-app
+Install dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+bash
+Copy code
+npm install
+Running the App
+To start the development server, run:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+bash
+Copy code
+npm start
+Open your browser and navigate to http://localhost:3000 to see the app in action.
 
-### `npm test`
+Building for Production
+To create an optimized production build, run:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+Copy code
+npm run build
+The build artifacts will be stored in the build/ directory.
 
-### `npm run build`
+Usage
+Set Timers:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Use the input fields to set your desired work session and break durations.
+Click the "Start" button to begin the first work session.
+Manage Tasks:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Add tasks to your task list by typing in the input field and pressing enter.
+Mark tasks as completed by clicking on them.
+Track Progress:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The app will automatically switch between work sessions and breaks, notifying you when it's time to switch.
+View your progress and number of completed pomodoros on the progress bar.
+Contributing
+Contributions are welcome! Please follow these steps to contribute:
 
-### `npm run eject`
+Fork the repository.
+Create a new branch for your feature or bugfix.
+Commit your changes and push the branch to your fork.
+Open a pull request with a detailed description of your changes.
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Acknowledgements
+The Pomodoro Technique® is a registered trademark by Francesco Cirillo.
+Icons by Font Awesome.
+Notifications powered by React Toastify.
+Contact
+For any questions or suggestions, please contact me at gamyburgos@gmail.com.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy productivity! 🚀
