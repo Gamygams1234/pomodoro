@@ -1,21 +1,32 @@
-Pomodoro App README
-Overview
+# Pomodoro App
+
+## Overview
+
 The Pomodoro App is a time management tool built using React that helps users break their work into intervals, traditionally 25 minutes in length, separated by short breaks. This method improves focus and productivity by encouraging periods of sustained concentration followed by rest.
 
-Features
-Customizable Timers: Set your preferred lengths for work sessions and breaks.
-Task List: Manage your tasks directly within the app.
-Progress Tracking: Visual representation of your completed pomodoros.
-Notifications: Get notified when it's time to take a break or get back to work.
-Responsive Design: Works seamlessly on both desktop and mobile devices.
-Getting Started
-Prerequisites
+## Features
+
+- **Customizable Timers:** Set your preferred lengths for work sessions and breaks.
+- **Task List:** Manage your tasks directly within the app.
+- **Progress Tracking:** Visual representation of your completed pomodoros.
+- **Notifications:** Get notified when it's time to take a break or get back to work.
+- **Responsive Design:** Works seamlessly on both desktop and mobile devices.
+
+## Getting Started
+
+### Prerequisites
+
 Ensure you have the following installed on your machine:
 
-Node.js
-npm
-Installation
-Clone the repository:
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/pomodoro-app.git
 
 bash
 Copy code
