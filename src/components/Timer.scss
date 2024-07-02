@@ -64,7 +64,7 @@ $dark-navy: #161932;
 // }
 
 .time {
-  font-size: 6.25rem;
+  font-size: 5.75rem;
   z-index: 1;
   color: $grey;
 }
@@ -80,6 +80,7 @@ button {
   letter-spacing: 1rem;
   font-weight: 700;
   color: $grey;
+  margin-left: 1rem;
   text-align: center;
   cursor: pointer;
 }
@@ -121,3 +122,29 @@ button {
 //     cursor: pointer;
 //   }
 // }
+
+
+
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (larger desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
+}

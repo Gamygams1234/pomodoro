@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Timer from "./components/Timer";
 import Settings from "./components/Settings";
 import Modal from "./components/Modal";
@@ -21,6 +21,11 @@ function App() {
     color: "coral",
     currentSetting: "pomodoro",
   });
+
+
+  useEffect(()=>{
+    console.log(settings)
+  }, [settings])
 
   const openModal = () => {
     setShowModal(true);

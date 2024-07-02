@@ -1,11 +1,16 @@
 $coral: #f87070;
-$skybue: #70f3f8;
+$skyblue: #70f3f8;
 $periwinkle: #d881f8;
 $grey: #d7e0ff;
 $navy: #1e213f;
 $white: #ffffff;
 $light-grey: #eff1fa;
 $dark-navy: #161932;
+// body.modal-open {
+//   overflow: hidden;
+//   position: fixed;
+//   width: 100%;
+// }
 
 .App {
   position: relative;
@@ -15,8 +20,13 @@ $dark-navy: #161932;
   align-items: center;
   justify-content: center;
   min-height: 100dvh;
+  height: 100%;
   background-color: $navy;
   color: white;
+ background: transparent;
+}
+
+body{
   background: linear-gradient(to bottom right, #2e325a, #0e112a);
 }
 
@@ -46,6 +56,40 @@ $dark-navy: #161932;
 }
 .fw-900 {
   font-weight: 900;
+}
+
+
+/* Text color classes */
+.text-coral {
+  color: $coral;
+}
+
+.text-skyblue {
+  color: $skyblue;
+}
+
+.text-periwinkle {
+  color: $periwinkle;
+}
+
+.text-grey {
+  color: $grey;
+}
+
+.text-navy {
+  color: $navy;
+}
+
+.text-white {
+  color: $white;
+}
+
+.text-light-grey {
+  color: $light-grey;
+}
+
+.text-dark-navy {
+  color: $dark-navy;
 }
 
 .kumbh-sans {
@@ -111,11 +155,37 @@ $dark-navy: #161932;
 .sky-blue {
   .options {
     .option.active {
-      background-color: $skybue;
+      background-color: $skyblue;
       color: $dark-navy;
     }
   }
 }
 
 .timer-outer {
+}
+
+
+
+@media (min-width: 576px) {
+
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (larger desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
 }

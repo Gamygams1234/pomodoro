@@ -1,18 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Timer.scss";
+import bellSound from '../assets/bell-172780.mp3'; // Update the path accordingly
 
 function Timer({ settings }) {
-  const [timeLeft, setTimeLeft] = useState(settings.pomodoro * 60);
+  const [timeLeft, setTimeLeft] = useState(settings[settings.currentSetting] * 60);
   const [isActive, setIsActive] = useState(false);
-  const totalTime = settings.pomodoro * 60;
-  const darkNavy = "#161932"; // Final color
+  const totalTime = settings[settings.currentSetting] * 60;
+  const bellRef = useRef(null);
+
+  // Function to reset the timer
+  const resetTimer = () => {
+    setTimeLeft(settings[settings.currentSetting] * 60);
+    setIsActive(false);
+  };
+
+  // Use effect to reset the timer whenever settings change
+  useEffect(() => {
+    resetTimer();
+  }, [settings]);
+
+  // Play sound when timer reaches 0
+  useEffect(() => {
+    if (timeLeft === 0) {
+      bellRef.current.play();
+    }
+  }, [timeLeft]);
 
   useEffect(() => {
     let interval = null;
-    if (isActive) {
+    if (isActive && timeLeft > 0) {
       interval = setInterval(() => {
         setTimeLeft((timeLeft) => timeLeft - 1);
       }, 1000);
+    } else if (timeLeft === 0) {
+      clearInterval(interval);
+      setIsActive(false); // Stop the timer when it reaches 0
     } else if (!isActive && timeLeft !== 0) {
       clearInterval(interval);
     }
@@ -26,30 +48,13 @@ function Timer({ settings }) {
   const circumference = 2 * Math.PI * radius;
   const progress = (timeLeft / totalTime) * circumference;
 
-  const calculateColor = (timeLeft, totalTime) => {
-    const startColor = settings.color === "coral" ? "#F87070" : settings.color === "sky-blue" ? "#70f3f8" : "#d881f8";
-    const ratio = timeLeft / totalTime;
-    const startRGB = hexToRgb(startColor);
-    const endRGB = hexToRgb(darkNavy);
-    const currentRGB = {
-      r: Math.round(startRGB.r * ratio + endRGB.r * (1 - ratio)),
-      g: Math.round(startRGB.g * ratio + endRGB.g * (1 - ratio)),
-      b: Math.round(startRGB.b * ratio + endRGB.b * (1 - ratio)),
-    };
-    return `rgb(${currentRGB.r}, ${currentRGB.g}, ${currentRGB.b})`;
-  };
-
-  const hexToRgb = (hex) => {
-    const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-    hex = hex.replace(shorthandRegex, (m, r, g, b) => r + r + g + g + b + b);
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result
-      ? {
-          r: parseInt(result[1], 16),
-          g: parseInt(result[2], 16),
-          b: parseInt(result[3], 16),
-        }
-      : null;
+  const handleIndicatorClick = () => {
+    bellRef.current.play();
+    if (timeLeft === 0) {
+      resetTimer();
+    } else {
+      setIsActive(!isActive);
+    }
   };
 
   return (
@@ -59,8 +64,9 @@ function Timer({ settings }) {
           <circle className="progress-circle-bg" stroke="#161932" strokeWidth="4" fill="none" cx="50" cy="50" r={radius} />
           <circle
             className="progress-circle-fg"
-            stroke={calculateColor(timeLeft, totalTime)}
+            stroke={settings.color=== "coral" ? "#f87070": settings.color==="sky-blue" ? "#70f3f8" : "#d881f8"}
             strokeWidth="4"
+            strokeLinecap="round"
             fill="none"
             cx="50"
             cy="50"
@@ -70,14 +76,17 @@ function Timer({ settings }) {
               strokeDashoffset: circumference - progress,
               transformOrigin: "50% 50%",
               transform: "rotate(90deg) scale(-1, 1)", // Rotate and flip to mirror
-              transition: "stroke-dashoffset 1s linear, stroke 1s linear", // Smooth transition for both offset and color
+              transition: "stroke-dashoffset 1s linear", // Smooth transition for offset
             }}
           />
         </svg>
         <div className="time fw-700">
           {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
         </div>
-        <div className="indicator" onClick={() => setIsActive(!isActive)}>{isActive ? "Pause" : "Start"}</div>
+        <div className="indicator" onClick={handleIndicatorClick}>
+          {timeLeft === 0 ? "Restart" : isActive ? "Pause" : "Start"}
+        </div>
+        <audio ref={bellRef} src={bellSound} />
       </div>
     </div>
   );

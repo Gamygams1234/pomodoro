@@ -1,11 +1,41 @@
 $coral: #f87070;
-$skybue: #70f3f8;
+$skyblue: #70f3f8;
 $periwinkle: #d881f8;
 $grey: #d7e0ff;
 $navy: #1e213f;
 $white: #ffffff;
 $light-grey: #eff1fa;
 $dark-navy: #161932;
+
+.line {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #e3e1e1; /* Change the color as needed */
+}
+.close {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+input[type="number"] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0px;
+  background-color: $light-grey;
+  color: $dark-navy;
+  padding: 0.6rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+}
 
 .settings {
   background-color: $white;
@@ -14,6 +44,7 @@ $dark-navy: #161932;
   flex-direction: column;
   border-radius: 1rem;
   position: relative;
+  padding-bottom: 3rem;
   h3 {
     text-transform: uppercase;
     color: $dark-navy;
@@ -25,7 +56,7 @@ $dark-navy: #161932;
     color: $dark-navy;
     display: flex;
     justify-content: space-between;
-    padding: 2rem 2.5rem;
+    padding: 1.5rem 2rem;
     align-items: center;
     font-weight: 700;
   }
@@ -41,10 +72,181 @@ $dark-navy: #161932;
     font-size: 16px;
     font-weight: 700;
     border-radius: 2rem;
-    bottom: -3em ;
+    bottom: -3em;
     left: 50%;
     transform: translate(-50%, -50%);
-    cursor:pointer;
-    
+    cursor: pointer;
   }
+
+  .setting-group {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .time-setting-group.setting-group {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      .indicator {
+        letter-spacing: 0;
+        color: #a5a6b2;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-transform: lowercase;
+        text-align: left;
+      }
+    }
+    label:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.font-settings {
+  display: flex;
+  margin: 0 auto;
+  .button {
+    background-color: $light-grey;
+    color: $navy;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: .8rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: all 0.2s ease-in-out;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button.active {
+    background-color: $dark-navy;
+    color: $white;
+  }
+}
+
+.color-settings {
+  display: flex;
+  margin: 0 auto;
+  .button {
+    font-weight: 700;
+    font-size: 1rem;
+    padding: .8rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: all 0.2s ease-in-out;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .check {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      color: $dark-navy;
+      transition: all 0.1s ease-in-out;
+    }
+  }
+  .button.active {
+    .check {
+      opacity: 1;
+    }
+  }
+  .coral-btn {
+    background-color: $coral;
+  }
+  .skyblue-btn {
+    background-color: $skyblue;
+  }
+  .periwinkle-btn {
+    background-color: $periwinkle;
+  }
+}
+
+@media (min-width: 576px) {
+  .settings{
+    .time-setting-group.setting-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 1rem;
+  
+      .details{
+        grid-column: span 3; 
+        justify-content: flex-start;
+        text-align: left;
+
+      }
+      label {
+    
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-gap: 1rem;
+        margin-bottom: 0;
+        .indicator{
+
+        }
+
+
+      }
+      label:not(:last-child) {
+        margin-bottom: 0rem;
+      }
+      
+    }
+    .setting-group{
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+       
+      .details{
+        grid-column: span 3; 
+        justify-content: flex-start;
+        text-align: left;
+        
+
+      }
+
+      .buttons{
+        margin: 0;
+        .button{
+          margin-left: 1rem;
+          margin-right: 0rem;
+        }
+
+      }
+    }
+  }
+
+
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (larger desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
 }

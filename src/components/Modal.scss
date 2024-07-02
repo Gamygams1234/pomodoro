@@ -11,6 +11,7 @@ $dark-navy: #161932;
   position: absolute;
   width: calc(100% - 3rem);
   padding: 1.5rem;
+  top: 0;
   z-index: 5;
   background-color: rgba(0, 0, 0, 0.5);
   height: calc(100% - 3rem);
@@ -22,4 +23,48 @@ $dark-navy: #161932;
     width: 100%;
     max-width: 540px;
   }
+}
+
+
+
+
+@media (max-width: 576px) {
+  .modal {
+    position: absolute;
+    width: calc(100% - 3rem);
+    padding: 1.5rem;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: calc(100% + 7rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .modal-content {
+      width: 100%;
+      max-width: 540px;
+    }
+  }
+  
+
+}
+
+/* Medium devices (desktops, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+/* Large devices (larger desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
 }
